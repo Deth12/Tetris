@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4793495599415818}
   - component: {fileID: 212404848778725932}
-  - component: {fileID: 114370763411229748}
+  - component: {fileID: 8234869452404904364}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -57,7 +57,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -70,18 +69,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2b04b070b759942bf99614a1e6cf610d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.13, y: 1.13}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114370763411229748
+--- !u!114 &8234869452404904364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,6 +89,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1946527347529550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f739fa5b65a724d4c9dec6a7db123284, type: 3}
+  m_Script: {fileID: 11500000, guid: 88bf51531c6d047409d674fde0864c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
