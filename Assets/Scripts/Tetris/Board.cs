@@ -111,7 +111,6 @@ public class Board : MonoBehaviour
                 rowsCleared++;
                 DeleteRow(y);
                 DecreaseRowAbove(y + 1);
-                // TODO: Add score (+= (h-y) * 10)
                 --y;
             }
         }

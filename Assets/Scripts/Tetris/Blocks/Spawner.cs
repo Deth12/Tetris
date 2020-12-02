@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Tetris.Blocks;
+using Tetris.Controllers;
 
 public class Spawner : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class Spawner : MonoBehaviour
 
 	private int _nextBlockIndex;
 	
-	public System.Action<Block> OnBlockSpawn;
+	public event System.Action<Block> OnBlockSpawn;
 
 	private void Start ()
 	{

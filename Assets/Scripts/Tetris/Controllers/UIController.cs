@@ -1,58 +1,41 @@
-﻿using Tetris.StateMachine;
-using UnityEngine;
+﻿using UnityEngine;
+using Tetris.StateMachines;
 using Tetris.UI;
+using Tetris.Views;
 using TMPro;
 
-public class UIController : MonoBehaviour
+namespace Tetris.Controllers
 {
-    [Header("Pause")]
-    [SerializeField] private UI_Screen _pauseScreen = default;
-    [SerializeField] private UI_Button _pauseButton = default;
-    [SerializeField] private UI_Button _resumeButton = default;
-
-    [SerializeField] private TMP_Text _levelCounter = default;
-    [SerializeField] private TMP_Text _linesCounter = default;
-    [SerializeField] private TMP_Text _scoreCounter = default;
-
-    private GameController _gameController;
-    
-    public void Initialize(GameController gameController)
+    public class UIController : MonoBehaviour
     {
-        _gameController = gameController;
+        [SerializeField] private GameView _gameView = default;
+        [SerializeField] private PauseView _pauseView = default;
+        [SerializeField] private EndgameView _endgameView = default;
+
+        public GameView GameView => _gameView;
         
-        _gameController.OnGamePause += ShowPauseScreen;
-        _gameController.OnGameUnpause += HidePauseScreen;
+        private GameController _gameController;
+        
+        public void Initialize(GameController gameController)
+        {
+            _gameController = gameController;
+            SetupViews();
+        }
 
-        SetupScreens();
-    }
+        private void SetupViews()
+        {
+            _gameView.Setup(_gameController);
+            _pauseView.Setup(_gameController);
+            _endgameView.Setup(_gameController);
+            
+            SubscribeViews();
+        }
 
-    private void SetupScreens()
-    {
-        _pauseScreen.SetupScreen();
-    }
-
-    private void ShowPauseScreen()
-    {
-        _pauseScreen.Show();
-    }
-
-    private void HidePauseScreen()
-    {
-        _pauseScreen.Hide();
-    }
-
-    public void UpdateLevelCounter(int value)
-    {
-        _levelCounter.text = value.ToString();
-    }
-
-    public void UpdateLinesCounter(int value)
-    {
-        _linesCounter.text = value.ToString();
-    }
-
-    public void UpdateScoreCounter(int value)
-    {
-        _scoreCounter.text = value.ToString().PadLeft(9, '0');
+        private void SubscribeViews()
+        {
+            _gameController.OnGamePause += _pauseView.Show;
+            _gameController.OnGameUnpause += _pauseView.Hide;
+            _gameController.OnGameEnd += _endgameView.Show;
+        }
     }
 }

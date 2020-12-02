@@ -1,72 +1,106 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Tetris.Managers;
 using UnityEngine;
-using Tetris.StateMachine;
+using Tetris.StateMachines;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class GameController : MonoBehaviour
+namespace Tetris.Controllers
 {
-    private static bool _isGameActive = true;
-    public static bool IsGameActive => _isGameActive;
-    
-    [Header("Controllers")] 
-    [SerializeField] private UIController _uiController = default;
-    
-    // State Machine
-    private StateMachine _stateMachine;
-    
-    private EmptyState _emptyState;
-    private GameplayState _gameplayState;
-    private PausedState _pausedState;
-
-    // Events
-    public Action OnGamePause;
-    public Action OnGameUnpause;
-    
-    private void Start()
+    public class GameController : MonoBehaviour
     {
-        SetupStateMachine();
-        SetupControllers();
-    }
+        private static bool _isGameActive = true;
+        public static bool IsGameActive => _isGameActive;
 
-    private void SetupStateMachine()
-    {
-        _stateMachine = new StateMachine();
+        [Header("Controllers")] 
+        [SerializeField] private UIController _uiController = default;
+        [SerializeField] private ScoreManager _scoreManager = default;
+
+        public ScoreManager ScoreManager => _scoreManager;
+        
+        // State Machine
+        private StateMachine _stateMachine;
+        
+        private EmptyState _emptyState;
+        private GameplayState _gameplayState;
+        private PausedState _pausedState;
+    
+        // Events
+        public event Action OnGamePause;
+        public event Action OnGameUnpause;
+        public event Action OnGameEnd;
+        public event Action<int, int, int> OnResultsConcluded;
+
+        private void Start()
+        {
+            _isGameActive = true;
             
-        _emptyState = new EmptyState(_stateMachine, this);
-        _pausedState = new PausedState(_stateMachine, this);
-        _gameplayState = new GameplayState(_stateMachine, this);
+            SetupStateMachine();
+            SetupControllers();
+        }
+    
+        private void SetupStateMachine()
+        {
+            _stateMachine = new StateMachine();
+                
+            _emptyState = new EmptyState(_stateMachine, this);
+            _pausedState = new PausedState(_stateMachine, this);
+            _gameplayState = new GameplayState(_stateMachine, this);
+    
+            _pausedState.SetNextState(_gameplayState);
+            _gameplayState.SetNextState(_pausedState);
+    
+            _stateMachine.Initialize(_gameplayState);
+        }
+    
+        private void SetupControllers()
+        {
+            _uiController.Initialize(this);
+        }
+    
+        private void Update()
+        {
+            _stateMachine.CurrentState.HandleInput();
+        }
+    
+        public void ChangeState(State state)
+        {
+            _stateMachine.ChangeState(state);
+        }
+    
+        public void PauseGame()
+        {
+            _isGameActive = false;
+            OnGamePause?.Invoke();
+        }
+    
+        public void UnpauseGame()
+        {
+            _isGameActive = true;
+            OnGameUnpause?.Invoke();
+        }
 
-        _pausedState.SetNextState(_gameplayState);
-        _gameplayState.SetNextState(_pausedState);
+        public void GameOver()
+        {
+            var results = _scoreManager.GetResults();
+            OnGameEnd?.Invoke();
+            OnResultsConcluded?.Invoke(results.level, results.lines, results.score);
+        }
 
-        _stateMachine.Initialize(_gameplayState);
-    }
+        public void RestartGame()
+        {
+            ScenesManager.Instance.LoadGameScene();
+        }
 
-    private void SetupControllers()
-    {
-        _uiController.Initialize(this);
-    }
-
-    private void Update()
-    {
-        _stateMachine.CurrentState.HandleInput();
-    }
-
-    public void ChangeState(State state)
-    {
-        _stateMachine.ChangeState(state);
-    }
-
-    public void PauseGame()
-    {
-        _isGameActive = false;
-        OnGamePause?.Invoke();
-    }
-
-    public void UnpauseGame()
-    {
-        _isGameActive = true;
-        OnGameUnpause?.Invoke();
+        public void ExitGame()
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        }
     }
 }
+

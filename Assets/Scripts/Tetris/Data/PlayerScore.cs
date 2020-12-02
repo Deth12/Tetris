@@ -38,14 +38,14 @@ public static class PlayerScore
         }
     }
 
-    public static Action<int> OnScoreChange;
-    public static Action<int> OnLevelChange;
-    public static Action<int> OnLinesChange;
+    public static event Action<int> OnScoreChange;
+    public static event Action<int> OnLevelChange;
+    public static event Action<int> OnLinesChange;
     
     public static void ResetProgress()
     {
-        _score = 0;
-        _level = 0;
-        _lines = 0;
+        Score = 0;
+        Level = 0;
+        Lines = 0;
     }
 }

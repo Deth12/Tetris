@@ -2,13 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tetris.Blocks;
+using Tetris.Managers;
 
-public class BlockController : MonoBehaviour
+namespace Tetris.Controllers
 {
-    [SerializeField] private Spawner _spawner;
-    [SerializeField] private InputManager _inputManager;
-    [SerializeField] private ScoreManager _scoreManager;
-    [SerializeField] private float _fallTick = 1f;
+    public class BlockController : MonoBehaviour
+{
+    [SerializeField] private Spawner _spawner = default;
+    [SerializeField] private InputManager _inputManager = default;
+    [SerializeField] private ScoreManager _scoreManager = default;
+    [SerializeField] private GameController _gameController = default;
+    
+    [Header("SFX")]
+    [SerializeField] private AudioClip _blockMove = default;
+    [SerializeField] private AudioClip _blockRotate = default;
+    [SerializeField] private AudioClip _blockDrop = default;
+    
+    private float _fallTick = 0.8f;
 
     private Block _currentBlock;
     
@@ -30,16 +41,29 @@ public class BlockController : MonoBehaviour
             {
                 _lastFallTime = time;
             };
-
+            
+            _currentBlock.OnBlockStrafe += () =>
+            {
+                AudioManager.Instance.PlayClip(_blockMove);
+            };
+            
+            _currentBlock.OnBlockRotate += () =>
+            {
+                AudioManager.Instance.PlayClip(_blockRotate);
+            };
+            
             _currentBlock.OnBlockPlaced += () =>
             {
-                _scoreManager.CollectBlockPlaced();
-                _scoreManager.CollectRowsCleared(Board.DeleteFullRows());
+                AudioManager.Instance.PlayClip(_blockDrop);
+                _scoreManager.CollectPlacedBlock();
+                _scoreManager.CollectClearedRow(Board.DeleteFullRows());
                 _spawner.SpawnBlock();
             };
         }
         else
         {
+            _currentBlock = null;
+            _gameController.GameOver();
             // Game Over
         }
     }
@@ -79,9 +103,14 @@ public class BlockController : MonoBehaviour
 
     private void Update()
     {
+        if(!GameController.IsGameActive || _currentBlock == null)
+            return;
+        
         if (Time.time - _lastFallTime >= _fallTick)
         {
             _currentBlock.TryMoveVertical();
         }
     }
 }
+}
+

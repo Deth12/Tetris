@@ -12,7 +12,8 @@ namespace Tetris.UI
             Fade, Collapse
         }
 
-        [SerializeField] private AnimationType _animationType;
+        [SerializeField] private AnimationType _animationType = default;
+        
         [SerializeField] private float _transitionTime = 0.2f;
         [SerializeField] private bool _isHiddenByDefault = true;
         

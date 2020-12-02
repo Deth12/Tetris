@@ -1,4 +1,4 @@
-namespace Tetris.StateMachine
+namespace Tetris.StateMachines
 {
     public class StateMachine
     {

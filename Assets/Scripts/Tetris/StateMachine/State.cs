@@ -1,4 +1,6 @@
-namespace Tetris.StateMachine
+using Tetris.Controllers;
+
+namespace Tetris.StateMachines
 {
     public abstract class State
     {

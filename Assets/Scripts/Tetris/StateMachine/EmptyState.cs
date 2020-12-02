@@ -1,5 +1,6 @@
+using Tetris.Controllers;
 
-namespace Tetris.StateMachine
+namespace Tetris.StateMachines
 {
     public class EmptyState : State
     {
