@@ -1,35 +1,37 @@
 ﻿using System;
 using UnityEngine;
-using Tetris.Controllers;
 
 namespace Tetris.Blocks
 {
     public class Block : MonoBehaviour
     {
         [SerializeField] private BlockShape _blockShape;
+
+        private GridManager _gridManager;
         
-        public Action<float> OnBlockMove;
-        public Action OnBlockStrafe;
-        public Action OnBlockRotate;
-        public Action OnBlockPlaced;
+        public event Action<float> OnBlockMove;
+        public event Action OnBlockStrafe;
+        public event Action OnBlockRotate;
+        public event Action OnBlockPlaced;
         
-        public bool Initialize(BlockController blockController)
+        public bool Initialize(GridManager gridManager)
         {
-            if (!Board.IsValidPositionOnGrid(transform)) 
+            _gridManager = gridManager;
+            if (!_gridManager.IsValidPositionOnGrid(transform)) 
             {
                 return false;
             } 
-            Board.UpdateGrid(transform);
+            _gridManager.UpdateGrid(transform);
             return true;
         }
     
         public void TryMoveHorizontal(Vector3 movement) 
         {
             transform.position += movement;
-            if (Board.IsValidPositionOnGrid(transform))
+            if (_gridManager.IsValidPositionOnGrid(transform))
             {
                 OnBlockStrafe?.Invoke();
-                Board.UpdateGrid(transform);
+                _gridManager.UpdateGrid(transform);
             }
             else
             {
@@ -40,9 +42,9 @@ namespace Tetris.Blocks
         public void TryMoveVertical() 
         {
             transform.position += new Vector3(0, -1, 0);
-            if (Board.IsValidPositionOnGrid(transform))
+            if (_gridManager.IsValidPositionOnGrid(transform))
             {
-                Board.UpdateGrid(transform);
+                _gridManager.UpdateGrid(transform);
                 OnBlockMove?.Invoke(Time.time);
             } 
             else 
@@ -59,9 +61,9 @@ namespace Tetris.Blocks
         public void TryRotate(float angle)
         {
             transform.Rotate(0, 0, angle);
-            if (Board.IsValidPositionOnGrid(transform) && _blockShape != BlockShape.Shape_O)
+            if (_gridManager.IsValidPositionOnGrid(transform) && _blockShape != BlockShape.Shape_O)
             {
-                Board.UpdateGrid(transform);
+                _gridManager.UpdateGrid(transform);
                 OnBlockRotate?.Invoke();
             }
             else
