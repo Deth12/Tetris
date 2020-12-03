@@ -5,7 +5,7 @@ namespace Tetris.Blocks
 {
     public class Block : MonoBehaviour
     {
-        [SerializeField] private BlockShape _blockShape;
+        [SerializeField] private BlockShape _blockShape = default;
 
         private GridManager _gridManager;
         
@@ -14,7 +14,7 @@ namespace Tetris.Blocks
         public event Action OnBlockRotate;
         public event Action OnBlockPlaced;
         
-        public bool Initialize(GridManager gridManager)
+        public bool TrySetup(GridManager gridManager)
         {
             _gridManager = gridManager;
             if (!_gridManager.IsValidPositionOnGrid(transform)) 
@@ -39,9 +39,9 @@ namespace Tetris.Blocks
             }
         }
         
-        public void TryMoveVertical() 
+        public void TryMoveVertical(Vector3 movement)
         {
-            transform.position += new Vector3(0, -1, 0);
+            transform.position += movement;
             if (_gridManager.IsValidPositionOnGrid(transform))
             {
                 _gridManager.UpdateGrid(transform);
@@ -49,10 +49,13 @@ namespace Tetris.Blocks
             } 
             else 
             {
-                transform.position += new Vector3(0, 1, 0);
+                transform.position -= movement;
+                
                 OnBlockPlaced?.Invoke();
                 
                 OnBlockMove = null;
+                OnBlockStrafe = null;
+                OnBlockRotate = null;
                 OnBlockPlaced = null;
                 this.enabled = false;
             }

@@ -10,12 +10,12 @@ namespace Tetris.Managers
     {
         public Action OnSceneLoad;
         
-        IEnumerator LoadAsynchronously(string levelName, float minWait = 2f) 
+        IEnumerator LoadAsynchronously(string levelName, float minWait = 1f) 
         {
             OnSceneLoad?.Invoke();
             
-            float timer = 0f;
-            float minLoadTime = minWait;
+            var timer = 0f;
+            var minLoadTime = minWait;
      
             AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);;
             operation.allowSceneActivation = false;
@@ -24,7 +24,9 @@ namespace Tetris.Managers
             {
                 timer += Time.deltaTime;
                 if (timer > minLoadTime)
+                {
                     operation.allowSceneActivation = true;
+                }
                 yield return null;
             }
             yield return null;

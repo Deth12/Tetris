@@ -3,9 +3,9 @@ using Tetris.Controllers;
 
 namespace Tetris.StateMachines
 {
-    public class EmptyState : State
+    public class PrepareState : State
     {
-        public EmptyState(StateMachine stateMachine, GameController gameController) : base(stateMachine, gameController)
+        public PrepareState(StateMachine stateMachine, GameController gameController) : base(stateMachine, gameController)
         {
             
         }

@@ -1,36 +1,61 @@
 ﻿using UnityEngine;
 using Tetris.Blocks;
-using Tetris.Controllers;
+using Tetris.Configs;
+using Tetris.Extensions;
+using Zenject;
 
-public class SpawnManager : MonoBehaviour
+namespace Tetris.Managers
 {
-	[Tooltip("Parent transform where new blocks will be spawned")]
-	[SerializeField] private Transform _blockContainer = default;
-	[SerializeField] private Block[] _blockTypes = default;
-	
-	[SerializeField] private BlockController _blockController = default;
-	[SerializeField] private SpawnerPredictor _predictor = default;
-
-	private int _nextBlockIndex;
-	
-	public event System.Action<Block> OnBlockSpawn;
-
-	private void Start ()
+	public class SpawnManager : MonoBehaviour
 	{
-		_nextBlockIndex = Random.Range(0, _blockTypes.Length);
-	}
-	
-	public void SpawnBlock()
-	{
-		OnBlockSpawn?.Invoke(CreateBlock(transform.position));
-		_nextBlockIndex = Random.Range(0, _blockTypes.Length);
-		_predictor.GeneratePrediction(_blockTypes[_nextBlockIndex]);
-	}
+		[SerializeField] private Transform _blockSpawnPoint = default;
+		[Tooltip("Parent transform where new blocks will be spawned")]
+		[SerializeField] private Transform _blockContainer = default;
+		[Tooltip("Parent transform where next block will be spawned")]
+		[SerializeField] private Transform _nextBlockContainer = default;
 
-	private Block CreateBlock(Vector3 position) 
-    {
-        Block block = Instantiate(_blockTypes[_nextBlockIndex], position, Quaternion.identity);
-		block.transform.SetParent(_blockContainer);
-        return block;
-    }
+		private BlocksConfig _blocksConfig;
+		private int _nextBlockIndex;
+		private GameObject _nextBlock;
+
+		public event System.Action<Block> OnBlockSpawn;
+
+		[Inject]
+		private void Construct(BlocksConfig blocksConfig)
+		{
+			_blocksConfig = blocksConfig;
+		}
+
+		private void Start ()
+		{
+			_nextBlockIndex = Random.Range(0, _blocksConfig.BlockTypes.Length);
+		}
+	
+		public void SpawnBlock()
+		{
+			OnBlockSpawn?.Invoke(CreateBlock(_blockSpawnPoint.position));
+			_nextBlockIndex = Random.Range(0, _blocksConfig.BlockTypes.Length);
+			SpawnBlockPrediction(_nextBlockIndex);
+		}
+	
+		private Block CreateBlock(Vector3 position) 
+		{
+			Block block = Instantiate(_blocksConfig.BlockTypes[_nextBlockIndex], position, Quaternion.identity);
+			block.transform.SetParent(_blockContainer);
+			return block;
+		}
+
+		private void SpawnBlockPrediction(int blockIndex)
+		{
+			if (_nextBlock != null)
+			{
+				Destroy(_nextBlock.gameObject);
+			}
+
+			_nextBlock = Instantiate(_blocksConfig.BlockTypes[blockIndex], _nextBlockContainer).gameObject;
+			_nextBlock.AlignCenter();
+			Destroy(_nextBlock.GetComponent<Block>());
+		}
+	}
 }
+

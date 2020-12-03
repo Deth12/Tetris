@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Tetris.Controllers;
-using Tetris.Views;
+﻿using Tetris.Controllers;
 using UnityEngine;
 using Tetris.UI;
 
@@ -18,16 +15,6 @@ namespace Tetris.Views
 
             _resumeButton.OnClick.AddListener(gameController.UnpauseGame);
             _restartButton.OnClick.AddListener(gameController.RestartGame);
-        }
-
-        public override void Show()
-        {
-            base.Show();
-        }
-
-        public override void Hide()
-        {
-            base.Hide();
         }
     }
 }

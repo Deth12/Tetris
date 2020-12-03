@@ -1,55 +1,46 @@
 ﻿using System;
+using Tetris.Configs;
 using UnityEngine;
 
 namespace Tetris.Controllers
 {
     public class InputController : IInputController
     {
-        //[Tooltip("Minimal time needed to detect key press")]
-        [SerializeField] private float _pressTreshold = 0.5f;
-        //[Tooltip("Interval between input reading")]
-        [SerializeField] private float _inputInterval = 0.1f;
-    
-        private float _pressTime;
-        private float _lastInputTime;
-    
-        public Action OnLeftPress;
-        public Action OnRightPress;
-        public Action OnDownPress;
-        public Action OnUpPress;
+        private readonly InputConfig _inputConfig;
 
-        public InputController()
+        private float _lastInputRegistered;
+    
+        public Action OnMoveLeftPress;
+        public Action OnMoveRightPress;
+        public Action OnRotatePress;
+        public Action OnFallPress;
+
+        public InputController(InputConfig inputConfig)
         {
-            
+            _inputConfig = inputConfig;
         }
         
         public void Tick()
         {
-            if(GetKey(KeyCode.LeftArrow))
-                OnLeftPress?.Invoke();
-            else if(GetKey(KeyCode.RightArrow))
-                OnRightPress?.Invoke();
-            else if(GetKey(KeyCode.DownArrow))
-                OnDownPress?.Invoke();
-            else if(Input.GetKeyDown(KeyCode.UpArrow))
-                OnUpPress?.Invoke();
+            if(GetKey(_inputConfig.MoveLeftKey))
+                OnMoveLeftPress?.Invoke();
+            else if(GetKey(_inputConfig.MoveRightKey))
+                OnMoveRightPress?.Invoke();
+            else if(GetKey(_inputConfig.FallKey))
+                OnFallPress?.Invoke();
+            else if(Input.GetKeyDown(_inputConfig.RotateKey))
+                OnRotatePress?.Invoke();
         }
     
-        private bool GetKey(KeyCode key) 
+        private bool GetKey(KeyCode key)
         {
-            bool isKeyDown = Input.GetKeyDown(key);
-            bool isKeyPressed = 
-                Input.GetKey(key) && 
-                Time.time - _pressTime > _pressTreshold && 
-                Time.time - _lastInputTime > _inputInterval;
-        
-            if (isKeyDown) 
-                _lastInputTime = Time.time;
-        
-            if (isKeyPressed) 
-                _lastInputTime = Time.time;
-        
-            return isKeyDown || isKeyPressed;
+            bool isPressKeyRegistred =
+                Input.GetKey(key) && Time.time - _lastInputRegistered > _inputConfig.InputInterval;
+
+            if (isPressKeyRegistred)
+                _lastInputRegistered = Time.time;
+
+            return isPressKeyRegistred;
         }
     }
 }

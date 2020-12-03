@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Tetris.Blocks;
 using Tetris.Managers;
@@ -20,10 +18,9 @@ namespace Tetris.Controllers
         [SerializeField] private AudioClip _blockRotate = default;
         [SerializeField] private AudioClip _blockDrop = default;
         
-        private float _fallTick = 0.8f;
-
         private Block _currentBlock;
-        
+
+        private float _fallTick = 0.8f;
         private float _lastFallTime;
         
         public event Action OnBlockStuck;
@@ -45,33 +42,11 @@ namespace Tetris.Controllers
         
         private void SetControlledBlock(Block block)
         {
-            if (block.Initialize(_gridManager))
+            if (block.TrySetup(_gridManager))
             {
                 _lastFallTime = Time.time;
+                AssignBlockEvents(block);
                 _currentBlock = block;
-                
-                _currentBlock.OnBlockMove += (time) =>
-                {
-                    _lastFallTime = time;
-                };
-                
-                _currentBlock.OnBlockStrafe += () =>
-                {
-                    AudioManager.Instance.PlayClip(_blockMove);
-                };
-                
-                _currentBlock.OnBlockRotate += () =>
-                {
-                    AudioManager.Instance.PlayClip(_blockRotate);
-                };
-                
-                _currentBlock.OnBlockPlaced += () =>
-                {
-                    AudioManager.Instance.PlayClip(_blockDrop);
-                    _scoreController.CollectPlacedBlock();
-                    _scoreController.CollectClearedRow(_gridManager.DeleteFullRows());
-                    _spawnManager.SpawnBlock();
-                };
             }
             else
             {
@@ -80,32 +55,70 @@ namespace Tetris.Controllers
             }
         }
 
+        private void AssignBlockEvents(Block block)
+        {
+            block.OnBlockMove += (time) =>
+            {
+                _lastFallTime = time;
+            };
+                
+            block.OnBlockStrafe += () =>
+            {
+                AudioManager.Instance.PlayClip(_blockMove);
+            };
+                
+            block.OnBlockRotate += () =>
+            {
+                AudioManager.Instance.PlayClip(_blockRotate);
+            };
+                
+            block.OnBlockPlaced += () =>
+            {
+                AudioManager.Instance.PlayClip(_blockDrop);
+                _scoreController.CollectPlacedBlock();
+                _scoreController.CollectClearedRow(_gridManager.DeleteFullRows());
+                _spawnManager.SpawnBlock();
+            };
+        }
+
         private void SetupInput()
         {
-            _inputController.OnLeftPress += MoveLeft;
-            _inputController.OnRightPress += MoveRight;
-            _inputController.OnUpPress += Rotate;
-            _inputController.OnDownPress += ForceFall;
+            _inputController.OnMoveLeftPress += MoveLeft;
+            _inputController.OnMoveRightPress += MoveRight;
+            _inputController.OnRotatePress += Rotate;
+            _inputController.OnFallPress += ForceFall;
         }
         
         private void MoveLeft()
         {
-            _currentBlock?.TryMoveHorizontal(new Vector3(-1, 0, 0));
+            if (_currentBlock != null)
+            {
+                _currentBlock.TryMoveHorizontal(Vector3.left);
+            }
         }
 
         private void MoveRight()
         {
-            _currentBlock?.TryMoveHorizontal(new Vector3(1, 0, 0));
+            if (_currentBlock != null)
+            {
+                _currentBlock.TryMoveHorizontal(Vector3.right);
+            }
         }
 
         private void Rotate()
         {
-            _currentBlock?.TryRotate(-90f);
+            if (_currentBlock != null)
+            {
+                _currentBlock.TryRotate(-90f);
+            }
         }
 
         private void ForceFall()
         {
-            _currentBlock?.TryMoveVertical();
+            if (_currentBlock != null)
+            {
+                _currentBlock.TryMoveVertical(Vector3.down);
+            }
         }
 
         public void Tick()
@@ -117,7 +130,7 @@ namespace Tetris.Controllers
             
             if (Time.time - _lastFallTime >= _fallTick)
             {
-                _currentBlock.TryMoveVertical();
+                _currentBlock.TryMoveVertical(Vector3.down);
             }
         }
     }

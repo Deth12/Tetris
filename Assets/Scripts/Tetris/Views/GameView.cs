@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Tetris.UI;
 using Tetris.Controllers;
-using Tetris.Managers;
+using Tetris.Extensions;
 using TMPro;
 
 namespace Tetris.Views
@@ -33,17 +33,7 @@ namespace Tetris.Views
     
         public void UpdateScoreCounter(int value)
         {
-            _scoreCounter.text = value.ToString().PadLeft(9, '0');
-        }
-
-        public override void Show()
-        {
-            base.Show();
-        }
-
-        public override void Hide()
-        {
-            base.Hide();
+            _scoreCounter.text = value.ToFormatedScore(9, '0');
         }
     }
 }

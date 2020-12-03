@@ -18,7 +18,10 @@ public class MyMonoInstaller : MonoInstaller
 
         Container.Bind<UIManager>().FromInstance(_uiManager).AsSingle();
         Container.Bind<SpawnManager>().FromInstance(_spawnManager).AsSingle();
+
         Container.Bind<ScoreConfig>().FromInstance(Resources.Load<ScoreConfig>("Configs/ScoreConfig"));
+        Container.Bind<InputConfig>().FromInstance(Resources.Load<InputConfig>("Configs/InputConfig"));
+        Container.Bind<BlocksConfig>().FromInstance(Resources.Load<BlocksConfig>("Configs/BlocksConfig"));
 
         Container.Bind<PlayerStats>().FromInstance(new PlayerStats());
         Container.Bind<ScoreController>().AsSingle();

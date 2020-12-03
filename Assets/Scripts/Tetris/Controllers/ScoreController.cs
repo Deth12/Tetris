@@ -29,7 +29,7 @@ namespace Tetris.Managers
         public void CollectClearedRow(int rowsAmount)
         {
             _playerStats.Lines += rowsAmount;
-            _playerStats.Score += rowsAmount * _scoreConfig.ClearedRowReward;
+            _playerStats.Score += _scoreConfig.GetClearedLRowsReward(rowsAmount);
         }
 
         public (int level, int lines, int score) GetResults()

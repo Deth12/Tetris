@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Tetris.Controllers;
+﻿using Tetris.Controllers;
 using UnityEngine;
 using Tetris.UI;
 using TMPro;
@@ -32,16 +30,6 @@ namespace Tetris.Views
             _levelResult.text = levelResult.ToString();
             _linesResult.text = linesResult.ToString();
             _scoreResult.text = scoreResult.ToString();
-        }
-
-        public override void Show()
-        {
-            base.Show();
-        }
-
-        public override void Hide()
-        {
-            base.Hide();
         }
     }
 }

@@ -40,5 +40,19 @@ namespace Tetris.Managers
             _gameController.OnGameUnpause += _pauseView.Hide;
             _gameController.OnGameEnd += _endgameView.Show;
         }
+
+        private void OnDestroy()
+        {
+            UnsubscribeViews();
+        }
+
+        private void UnsubscribeViews()
+        {
+            _gameController.OnGameStart -= _prepareView.Hide;
+            _gameController.OnGameStart -= _gameView.Show;
+            _gameController.OnGamePause -= _pauseView.Show;
+            _gameController.OnGameUnpause -= _pauseView.Hide;
+            _gameController.OnGameEnd -= _endgameView.Show;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Tetris.Controllers
         // State Machine
         private StateMachine _stateMachine;
         
-        private EmptyState _emptyState;
+        private PrepareState _prepareState;
         private GameplayState _gameplayState;
         private PausedState _pausedState;
     
@@ -54,15 +54,15 @@ namespace Tetris.Controllers
         {
             _stateMachine = new StateMachine();
                 
-            _emptyState = new EmptyState(_stateMachine, this);
+            _prepareState = new PrepareState(_stateMachine, this);
             _pausedState = new PausedState(_stateMachine, this);
             _gameplayState = new GameplayState(_stateMachine, this);
     
-            _emptyState.SetNextState(_gameplayState);
+            _prepareState.SetNextState(_gameplayState);
             _gameplayState.SetNextState(_pausedState);
             _pausedState.SetNextState(_gameplayState);
     
-            _stateMachine.Initialize(_emptyState);
+            _stateMachine.Initialize(_prepareState);
         }
     
         public void Tick()

@@ -372,13 +372,19 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Extensions" t="Include">
+            <e p="GameObjectExtensions.cs" t="Include" />
+            <e p="StringExtensions.cs" t="Include" />
+          </e>
+          <e p="MyMonoInstaller.cs" t="Include" />
           <e p="Tetris" t="Include">
             <e p="Blocks" t="Include">
               <e p="Block.cs" t="Include" />
               <e p="BlockShape.cs" t="Include" />
-              <e p="SpawnerPredictor.cs" t="Include" />
             </e>
             <e p="Configs" t="Include">
+              <e p="BlocksConfig.cs" t="Include" />
+              <e p="InputConfig.cs" t="Include" />
               <e p="ScoreConfig.cs" t="Include" />
             </e>
             <e p="Controllers" t="Include">
@@ -403,7 +409,6 @@
               <e p="SpawnManager.cs" t="Include" />
               <e p="UIManager.cs" t="Include" />
             </e>
-            <e p="MyMonoInstaller.cs" t="Include" />
             <e p="Patterns" t="Include">
               <e p="Singleton.cs" t="Include" />
             </e>
@@ -419,7 +424,6 @@
               <e p="UI_Button.cs" t="Include" />
               <e p="UI_Screen.cs" t="Include" />
             </e>
-            <e p="Utils.cs" t="Include" />
             <e p="Views" t="Include">
               <e p="BaseView.cs" t="Include" />
               <e p="EndgameView.cs" t="Include" />

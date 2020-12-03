@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Tetris.Controllers;
+﻿using Tetris.Controllers;
 using Tetris.UI;
 using UnityEngine;
 
