@@ -372,16 +372,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Constants" t="Include">
-            <e p="ConstantPaths.cs" t="Include" />
-          </e>
-          <e p="Extensions" t="Include">
-            <e p="GameObjectExtensions.cs" t="Include" />
-            <e p="StringExtensions.cs" t="Include" />
-          </e>
-          <e p="Installers" t="Include">
-            <e p="MyMonoInstaller.cs" t="Include" />
-          </e>
           <e p="Tetris" t="Include">
             <e p="Blocks" t="Include">
               <e p="Block.cs" t="Include" />
@@ -392,8 +382,11 @@
               <e p="InputConfig.cs" t="Include" />
               <e p="ScoreConfig.cs" t="Include" />
             </e>
+            <e p="Constants" t="Include">
+              <e p="ConstantAudio.cs" t="Include" />
+              <e p="ConstantPaths.cs" t="Include" />
+            </e>
             <e p="Controllers" t="Include">
-              <e p="AudioController.cs" t="Include" />
               <e p="BlockController.cs" t="Include" />
               <e p="GameController.cs" t="Include" />
               <e p="GridController.cs" t="Include" />
@@ -409,6 +402,13 @@
             <e p="Data" t="Include">
               <e p="PlayerStats.cs" t="Include" />
             </e>
+            <e p="Extensions" t="Include">
+              <e p="GameObjectExtensions.cs" t="Include" />
+              <e p="StringExtensions.cs" t="Include" />
+            </e>
+            <e p="Installers" t="Include">
+              <e p="MyMonoInstaller.cs" t="Include" />
+            </e>
             <e p="Managers" t="Include">
               <e p="AudioManager.cs" t="Include" />
               <e p="ScenesManager.cs" t="Include" />
@@ -417,6 +417,9 @@
             </e>
             <e p="Patterns" t="Include">
               <e p="Singleton.cs" t="Include" />
+            </e>
+            <e p="Scriptable" t="Include">
+              <e p="AudioLoader.cs" t="Include" />
             </e>
             <e p="StateMachine" t="Include">
               <e p="EmptyState.cs" t="Include" />

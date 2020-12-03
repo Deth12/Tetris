@@ -1,4 +1,5 @@
 ﻿using System;
+using Tetris.Constants;
 using Tetris.Managers;
 using Tetris.StateMachines;
 
@@ -73,6 +74,9 @@ namespace Tetris.Controllers
         public void StartGame()
         {
             _isGameActive = true;
+            
+            AudioManager.Instance.PlayClipByName(ConstantAudioNames.GAME_NEWGAME);
+            
             _spawnManager.SpawnBlock();
             OnGameStart?.Invoke();
         }
@@ -80,12 +84,18 @@ namespace Tetris.Controllers
         public void PauseGame()
         {
             _isGameActive = false;
+         
+            AudioManager.Instance.PlayClipByName(ConstantAudioNames.GAME_PAUSE);
+
             OnGamePause?.Invoke();
         }
     
         public void UnpauseGame()
         {
             _isGameActive = true;
+         
+            AudioManager.Instance.PlayClipByName(ConstantAudioNames.GAME_RESUME);
+
             OnGameUnpause?.Invoke();
         }
 

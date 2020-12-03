@@ -2,6 +2,7 @@
 using UnityEngine;
 using Tetris.Blocks;
 using Tetris.Managers;
+using Tetris.Constants;
 
 namespace Tetris.Controllers
 { 
@@ -12,11 +13,6 @@ namespace Tetris.Controllers
 
         private SpawnManager _spawnManager;
         private GridController _gridController;
-        
-        [Header("SFX")]
-        [SerializeField] private AudioClip _blockMove = default;
-        [SerializeField] private AudioClip _blockRotate = default;
-        [SerializeField] private AudioClip _blockDrop = default;
         
         private Block _currentBlock;
 
@@ -65,17 +61,17 @@ namespace Tetris.Controllers
                 
             block.OnBlockStrafe += () =>
             {
-                AudioManager.Instance.PlayClip(_blockMove);
+                AudioManager.Instance.PlayClipByName(ConstantAudioNames.BLOCK_MOVE);
             };
                 
             block.OnBlockRotate += () =>
             {
-                AudioManager.Instance.PlayClip(_blockRotate);
+                AudioManager.Instance.PlayClipByName(ConstantAudioNames.BLOCK_ROTATE);
             };
                 
             block.OnBlockPlaced += () =>
             {
-                AudioManager.Instance.PlayClip(_blockDrop);
+                AudioManager.Instance.PlayClipByName(ConstantAudioNames.BLOCK_DROP);
                 _scoreController.CollectPlacedBlock();
                 _scoreController.CollectClearedRow(_gridController.DeleteFullRows());
                 _spawnManager.SpawnBlock();
