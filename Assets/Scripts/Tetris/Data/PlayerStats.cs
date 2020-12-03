@@ -3,9 +3,9 @@
 [Serializable]
 public class PlayerStats
 {
-    private int _score;
-    private int _level;
-    private int _lines;
+    private int _score = 0;
+    private int _level = 1;
+    private int _lines = 0;
 
     public int Score
     {
@@ -40,4 +40,11 @@ public class PlayerStats
     public Action<int> OnLevelChange;
     public Action<int> OnLinesChange;
     public Action<int> OnScoreChange;
+    
+    public void ResetProgress()
+    {
+        Score = 0;
+        Level = 1;
+        Lines = 0;
+    }
 }

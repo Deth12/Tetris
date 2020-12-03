@@ -372,11 +372,16 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Constants" t="Include">
+            <e p="ConstantPaths.cs" t="Include" />
+          </e>
           <e p="Extensions" t="Include">
             <e p="GameObjectExtensions.cs" t="Include" />
             <e p="StringExtensions.cs" t="Include" />
           </e>
-          <e p="MyMonoInstaller.cs" t="Include" />
+          <e p="Installers" t="Include">
+            <e p="MyMonoInstaller.cs" t="Include" />
+          </e>
           <e p="Tetris" t="Include">
             <e p="Blocks" t="Include">
               <e p="Block.cs" t="Include" />
@@ -397,6 +402,7 @@
                 <e p="IBlockController.cs" t="Include" />
                 <e p="IGameController.cs" t="Include" />
                 <e p="IInputController.cs" t="Include" />
+                <e p="IScoreController.cs" t="Include" />
               </e>
               <e p="ScoreController.cs" t="Include" />
             </e>

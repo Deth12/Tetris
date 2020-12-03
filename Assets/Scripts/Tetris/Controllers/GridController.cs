@@ -1,116 +1,120 @@
 ﻿using System;
 using UnityEngine;
 
-public class GridManager
+namespace Tetris.Controllers
 {
-    private const int WIDTH = 10;
-    private const int HEIGHT = 20;
-    
-    private Transform[,] grid = new Transform[WIDTH, HEIGHT];
-
-    public Vector2 RoundVector2(Vector2 v) 
+    public class GridController
     {
-        return new Vector2 (Mathf.Round (v.x), Mathf.Round (v.y));
-    }
+        private const int WIDTH = 10;
+        private const int HEIGHT = 20;
+        
+        private Transform[,] grid = new Transform[WIDTH, HEIGHT];
 
-    public bool IsValidPositionOnGrid(Transform transform)
-    {
-        foreach (Transform child in transform) 
+        public Vector2 RoundVector2(Vector2 v) 
         {
-            Vector2 v = RoundVector2(child.position);
-            if(!InsideBorder(v)) 
-            {
-                return false;
-            }
-            if (grid[(int)(v.x), (int)(v.y)] != null &&
-                grid[(int)(v.x), (int)(v.y)].parent != transform) 
-            {
-                return false;
-            }
+            return new Vector2 (Mathf.Round (v.x), Mathf.Round (v.y));
         }
-        return true;
-    }
-    
-    public void UpdateGrid(Transform transform) 
-    {
-        for (int y = 0; y < HEIGHT; ++y) 
+
+        public bool IsValidPositionOnGrid(Transform transform)
         {
-            for (int x = 0; x < WIDTH; ++x) 
+            foreach (Transform child in transform) 
             {
-                if (grid[x,y] != null && grid[x,y].parent == transform) 
+                Vector2 v = RoundVector2(child.position);
+                if(!InsideBorder(v)) 
                 {
-                    grid[x,y] = null;
+                    return false;
                 }
-            } 
-        }
-        foreach (Transform child in transform) 
-        {
-            Vector2 v = RoundVector2(child.position);
-            grid[(int)v.x,(int)v.y] = child;
-        }
-    }
-
-    public bool InsideBorder(Vector2 pos) 
-    {
-        return ((int)pos.x >= 0 && (int)pos.x < WIDTH && (int)pos.y >= 0);
-    }
-
-    public void DeleteRow(int y) 
-    {
-        for (int x = 0; x < WIDTH; x++) 
-        {
-            GameObject.Destroy(grid[x, y].gameObject);
-            grid[x, y] = null;
-        }
-    }
-
-    public void DecreaseRow(int y) 
-    {
-        for (int x = 0; x < WIDTH; x++) 
-        {
-            if (grid[x, y] != null) 
-            {
-                grid[x, y - 1] = grid[x, y];
-                grid[x,y] = null;
-                grid[x, y-1].position += new Vector3(0, -1, 0);
+                if (grid[(int)(v.x), (int)(v.y)] != null &&
+                    grid[(int)(v.x), (int)(v.y)].parent != transform) 
+                {
+                    return false;
+                }
             }
+            return true;
         }
-    }
-
-    public void DecreaseRowAbove(int y) 
-    {
-        for (int i = y; i < HEIGHT; i++) 
+        
+        public void UpdateGrid(Transform transform) 
         {
-            DecreaseRow(i);
-        }
-    }
-
-    public bool IsRowFull(int y)
-    {
-        for (int x = 0; x < WIDTH; x++) 
-        {
-            if (grid[x, y] == null) 
+            for (int y = 0; y < HEIGHT; ++y) 
             {
-                return false;
+                for (int x = 0; x < WIDTH; ++x) 
+                {
+                    if (grid[x,y] != null && grid[x,y].parent == transform) 
+                    {
+                        grid[x,y] = null;
+                    }
+                } 
             }
-        }
-        return true;
-    }
-
-    public int DeleteFullRows()
-    {
-        int rowsCleared = 0;
-        for (int y = 0; y < HEIGHT; y++) 
-        {
-            if (IsRowFull(y))
+            foreach (Transform child in transform) 
             {
-                rowsCleared++;
-                DeleteRow(y);
-                DecreaseRowAbove(y + 1);
-                --y;
+                Vector2 v = RoundVector2(child.position);
+                grid[(int)v.x,(int)v.y] = child;
             }
         }
 
-        return rowsCleared;
+        public bool InsideBorder(Vector2 pos) 
+        {
+            return ((int)pos.x >= 0 && (int)pos.x < WIDTH && (int)pos.y >= 0);
+        }
+
+        public void DeleteRow(int y) 
+        {
+            for (int x = 0; x < WIDTH; x++) 
+            {
+                GameObject.Destroy(grid[x, y].gameObject);
+                grid[x, y] = null;
+            }
+        }
+
+        public void DecreaseRow(int y) 
+        {
+            for (int x = 0; x < WIDTH; x++) 
+            {
+                if (grid[x, y] != null) 
+                {
+                    grid[x, y - 1] = grid[x, y];
+                    grid[x,y] = null;
+                    grid[x, y-1].position += new Vector3(0, -1, 0);
+                }
+            }
+        }
+
+        public void DecreaseRowAbove(int y) 
+        {
+            for (int i = y; i < HEIGHT; i++) 
+            {
+                DecreaseRow(i);
+            }
+        }
+
+        public bool IsRowFull(int y)
+        {
+            for (int x = 0; x < WIDTH; x++) 
+            {
+                if (grid[x, y] == null) 
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public int DeleteFullRows()
+        {
+            int rowsCleared = 0;
+            for (int y = 0; y < HEIGHT; y++) 
+            {
+                if (IsRowFull(y))
+                {
+                    rowsCleared++;
+                    DeleteRow(y);
+                    DecreaseRowAbove(y + 1);
+                    --y;
+                }
+            }
+
+            return rowsCleared;
+        }
     }
 }
+

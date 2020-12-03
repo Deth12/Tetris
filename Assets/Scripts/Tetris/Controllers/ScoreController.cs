@@ -1,24 +1,30 @@
-﻿using Tetris.Configs;
+﻿using System;
+using Tetris.Configs;
+using Tetris.Controllers;
+using UnityEngine;
 
 namespace Tetris.Managers
 {
-    public class ScoreController
+    public class ScoreController : IScoreController
     {
-        private UIManager _uiManager;
         private ScoreConfig _scoreConfig;
         private PlayerStats _playerStats;
 
-        public ScoreController(UIManager uiManager, PlayerStats playerStats, ScoreConfig scoreConfig)
+        private int _scoreToNextLevel;
+        
+        public Action<float> OnDifficultyIncrease;
+        public Action<int> OnCheckLinesToNextLevel;
+
+        public ScoreController(PlayerStats playerStats, ScoreConfig scoreConfig)
         {
-            _uiManager = uiManager;
             _scoreConfig = scoreConfig;
             _playerStats = playerStats;
-            
-            _playerStats.OnLevelChange += _uiManager.GameView.UpdateLevelCounter;
-            _playerStats.OnLinesChange += _uiManager.GameView.UpdateLinesCounter;
-            _playerStats.OnScoreChange += _uiManager.GameView.UpdateScoreCounter;
-        
-            ResetProgress();
+        }
+
+        public void Initialize()
+        {
+            _playerStats.OnLinesChange += CheckLines;
+            _playerStats.ResetProgress();
         }
 
         public void CollectPlacedBlock()
@@ -36,12 +42,22 @@ namespace Tetris.Managers
         {
             return (_playerStats.Level, _playerStats.Lines, _playerStats.Score);
         }
-        
-        public void ResetProgress()
+
+        private void CheckLines(int currentLines)
         {
-            _playerStats.Score = 0;
-            _playerStats.Level = 0;
-            _playerStats.Lines = 0;
+            var linesToNextLevel = _scoreConfig.GetNextLevelLinesGap(_playerStats.Level) - currentLines;
+            if (linesToNextLevel <= 0)
+            {
+                _playerStats.Level++;
+                OnDifficultyIncrease?.Invoke(_scoreConfig.DifficultyIncreasePerLevel);
+                linesToNextLevel = _scoreConfig.GetNextLevelLinesGap(_playerStats.Level);
+            }
+            OnCheckLinesToNextLevel?.Invoke(linesToNextLevel);
+        }
+        
+        public void Dispose()
+        {
+            _playerStats.OnScoreChange -= CheckLines;
         }
     }
 }

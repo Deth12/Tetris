@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Tetris.Views;
 using Tetris.Controllers;
+using Zenject;
 
 namespace Tetris.Managers
 {
@@ -11,9 +12,23 @@ namespace Tetris.Managers
         [SerializeField] private PauseView _pauseView = default;
         [SerializeField] private EndgameView _endgameView = default;
 
-        public GameView GameView => _gameView;
-        
         private GameController _gameController;
+        private ScoreController _scoreController;
+        
+        private PlayerStats _playerStats;
+        
+        [Inject]
+        public void Construct(ScoreController scoreController, PlayerStats playerStats)
+        {
+            _playerStats = playerStats;
+            _scoreController = scoreController;
+            
+            _scoreController.OnCheckLinesToNextLevel += _gameView.UpdateNextLevelLinesCounter;
+            
+            _playerStats.OnLevelChange += _gameView.UpdateLevelCounter;
+            _playerStats.OnLinesChange += _gameView.UpdateLinesCounter;
+            _playerStats.OnScoreChange += _gameView.UpdateScoreCounter;
+        }
         
         public void Initialize(GameController gameController)
         {
@@ -43,6 +58,11 @@ namespace Tetris.Managers
 
         private void OnDestroy()
         {
+            _scoreController.OnCheckLinesToNextLevel -= _gameView.UpdateNextLevelLinesCounter;
+            _playerStats.OnLevelChange -= _gameView.UpdateLevelCounter;
+            _playerStats.OnLinesChange -= _gameView.UpdateLinesCounter;
+            _playerStats.OnScoreChange -= _gameView.UpdateScoreCounter;
+
             UnsubscribeViews();
         }
 

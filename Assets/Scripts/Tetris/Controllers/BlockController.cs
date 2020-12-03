@@ -11,7 +11,7 @@ namespace Tetris.Controllers
         private InputController _inputController;
 
         private SpawnManager _spawnManager;
-        private GridManager _gridManager;
+        private GridController _gridController;
         
         [Header("SFX")]
         [SerializeField] private AudioClip _blockMove = default;
@@ -20,29 +20,30 @@ namespace Tetris.Controllers
         
         private Block _currentBlock;
 
-        private float _fallTick = 0.8f;
+        private float _fallTick = 1f;
         private float _lastFallTime;
         
         public event Action OnBlockStuck;
 
         public BlockController(ScoreController scoreController,
-            InputController inputController, SpawnManager spawnManager, GridManager gridManager)
+            InputController inputController, GridController gridController, SpawnManager spawnManager)
         {
             _scoreController = scoreController;
             _inputController = inputController;
             _spawnManager = spawnManager;
-            _gridManager = gridManager;
+            _gridController = gridController;
         }
             
         public void Initialize()
         {
             _spawnManager.OnBlockSpawn += SetControlledBlock;
+            _scoreController.OnDifficultyIncrease += IncreaseFallSpeed;
             SetupInput();
         }
         
         private void SetControlledBlock(Block block)
         {
-            if (block.TrySetup(_gridManager))
+            if (block.TrySetup(_gridController))
             {
                 _lastFallTime = Time.time;
                 AssignBlockEvents(block);
@@ -76,7 +77,7 @@ namespace Tetris.Controllers
             {
                 AudioManager.Instance.PlayClip(_blockDrop);
                 _scoreController.CollectPlacedBlock();
-                _scoreController.CollectClearedRow(_gridManager.DeleteFullRows());
+                _scoreController.CollectClearedRow(_gridController.DeleteFullRows());
                 _spawnManager.SpawnBlock();
             };
         }
@@ -119,6 +120,11 @@ namespace Tetris.Controllers
             {
                 _currentBlock.TryMoveVertical(Vector3.down);
             }
+        }
+
+        private void IncreaseFallSpeed(float multiplier)
+        {
+            _fallTick *= (1 - (_fallTick * multiplier));
         }
 
         public void Tick()

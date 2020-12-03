@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Tetris.Blocks;
 using Tetris.Managers;
-using UnityEngine;
 using Tetris.StateMachines;
-using UnityEngine.SocialPlatforms.Impl;
 
 namespace Tetris.Controllers
 {

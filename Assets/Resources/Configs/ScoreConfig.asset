@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2a53d0b004a4f1f94cfd258c0264e0, type: 3}
   m_Name: ScoreConfig
   m_EditorClassIdentifier: 
+  _levelIncreaseLinesGap: 2
+  _difficultyIncreasePerLevel: 0.05
   _placedBlockMaxReward: 8
   _placedBlockMinReward: 4
-  _clearedRowReward: 20
+  _rowClearReward: 20

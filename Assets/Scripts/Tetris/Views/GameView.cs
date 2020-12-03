@@ -13,6 +13,7 @@ namespace Tetris.Views
         [SerializeField] private TMP_Text _levelCounter = default;
         [SerializeField] private TMP_Text _linesCounter = default;
         [SerializeField] private TMP_Text _scoreCounter = default;
+        [SerializeField] private TMP_Text _nextLevelLinesCounter = default;
 
         public override void Setup(GameController gameController)
         {
@@ -34,6 +35,11 @@ namespace Tetris.Views
         public void UpdateScoreCounter(int value)
         {
             _scoreCounter.text = value.ToFormatedScore(9, '0');
+        }
+
+        public void UpdateNextLevelLinesCounter(int value)
+        {
+            _nextLevelLinesCounter.text = value.ToString();
         }
     }
 }
