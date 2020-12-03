@@ -32,9 +32,9 @@ namespace Tetris.Configs
             return Random.Range(PlacedBlockMinReward, PlacedBlockMaxReward + 1);
         }
 
-        public int GetClearedLRowsReward(int rowsAmount)
+        public int GetClearedLinesReward(int linesAmount)
         {
-            return RowClearReward * rowsAmount;
+            return RowClearReward * linesAmount;
         }
 
         public int GetNextLevelLinesGap(int level)

@@ -73,7 +73,7 @@ namespace Tetris.Controllers
             {
                 AudioManager.Instance.PlayClipByName(ConstantAudioNames.BLOCK_DROP);
                 _scoreController.CollectPlacedBlock();
-                _scoreController.CollectClearedRow(_gridController.DeleteFullRows());
+                _scoreController.CollectClearedLines(_gridController.DeleteFullLines());
                 _spawnManager.SpawnBlock();
             };
         }

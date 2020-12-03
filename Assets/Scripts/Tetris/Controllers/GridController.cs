@@ -9,11 +9,6 @@ namespace Tetris.Controllers
         
         private Transform[,] grid = new Transform[WIDTH, HEIGHT];
 
-        public void AddToGrid(Transform transform, int x, int y)
-        {
-            grid[x, y] = transform;
-        }
-        
         public Vector2 RoundVector2(Vector2 v) 
         {
             return new Vector2 (Mathf.Round (v.x), Mathf.Round (v.y));
@@ -61,7 +56,7 @@ namespace Tetris.Controllers
             return ((int)pos.x >= 0 && (int)pos.x < WIDTH && (int)pos.y >= 0);
         }
 
-        public void DeleteRow(int y) 
+        public void DeleteLine(int y) 
         {
             for (int x = 0; x < WIDTH; x++) 
             {
@@ -70,7 +65,7 @@ namespace Tetris.Controllers
             }
         }
 
-        public void DecreaseRow(int y) 
+        public void DecreaseLine(int y) 
         {
             for (int x = 0; x < WIDTH; x++) 
             {
@@ -83,15 +78,15 @@ namespace Tetris.Controllers
             }
         }
 
-        public void DecreaseRowAbove(int y) 
+        public void DecreaseLineAbove(int y) 
         {
             for (int i = y; i < HEIGHT; i++) 
             {
-                DecreaseRow(i);
+                DecreaseLine(i);
             }
         }
 
-        public bool IsRowFull(int y)
+        public bool IsLineFull(int y)
         {
             for (int x = 0; x < WIDTH; x++) 
             {
@@ -103,16 +98,16 @@ namespace Tetris.Controllers
             return true;
         }
 
-        public int DeleteFullRows()
+        public int DeleteFullLines()
         {
             int rowsCleared = 0;
             for (int y = 0; y < HEIGHT; y++) 
             {
-                if (IsRowFull(y))
+                if (IsLineFull(y))
                 {
                     rowsCleared++;
-                    DeleteRow(y);
-                    DecreaseRowAbove(y + 1);
+                    DeleteLine(y);
+                    DecreaseLineAbove(y + 1);
                     --y;
                 }
             }

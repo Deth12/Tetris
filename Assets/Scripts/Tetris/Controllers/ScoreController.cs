@@ -1,6 +1,7 @@
 ﻿using System;
 using Tetris.Configs;
 using Tetris.Controllers;
+using UnityEngine;
 
 namespace Tetris.Managers
 {
@@ -26,20 +27,15 @@ namespace Tetris.Managers
             _playerStats.ResetProgress();
         }
 
-        public void AddScore(int value)
-        {
-            _playerStats.Score += value;
-        }
-
         public void CollectPlacedBlock()
         {
             _playerStats.Score +=_scoreConfig.GetRandomPlacedBlockReward();
         }
     
-        public void CollectClearedRow(int rowsAmount)
+        public void CollectClearedLines(int linesAmount)
         {
-            _playerStats.Lines += rowsAmount;
-            _playerStats.Score += _scoreConfig.GetClearedLRowsReward(rowsAmount);
+            _playerStats.Lines += linesAmount;
+            _playerStats.Score += _scoreConfig.GetClearedLinesReward(linesAmount);
         }
 
         public (int level, int lines, int score) GetResults()

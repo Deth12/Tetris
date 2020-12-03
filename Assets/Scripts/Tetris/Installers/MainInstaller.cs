@@ -23,11 +23,11 @@ namespace Tetris.Installers
             Container.Bind<UIManager>().FromInstance(_uiManager).AsSingle();
             Container.Bind<SpawnManager>().FromInstance(_spawnManager).AsSingle();
 
-            Container.Bind<ScoreConfig>().FromInstance(Resources.Load<ScoreConfig>(ConstantPaths.SCORE_CONFIG));
-            Container.Bind<InputConfig>().FromInstance(Resources.Load<InputConfig>(ConstantPaths.INPUT_CONFIG));
-            Container.Bind<BlocksConfig>().FromInstance(Resources.Load<BlocksConfig>(ConstantPaths.BLOCKS_CONFIG));
+            Container.Bind<ScoreConfig>().FromInstance(Resources.Load<ScoreConfig>(ConstantPaths.SCORE_CONFIG)).AsSingle();
+            Container.Bind<InputConfig>().FromInstance(Resources.Load<InputConfig>(ConstantPaths.INPUT_CONFIG)).AsSingle();
+            Container.Bind<BlocksConfig>().FromInstance(Resources.Load<BlocksConfig>(ConstantPaths.BLOCKS_CONFIG)).AsSingle();
 
-            Container.Bind<PlayerStats>().FromInstance(new PlayerStats());
+            Container.Bind<PlayerStats>().FromInstance(new PlayerStats()).AsSingle();
             Container.Bind<GridController>().AsSingle();
         }
     }

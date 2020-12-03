@@ -480,7 +480,7 @@
               <e p="PlayerStats.cs" t="Include" />
             </e>
             <e p="Installers" t="Include">
-              <e p="MyMonoInstaller.cs" t="Include" />
+              <e p="MainInstaller.cs" t="Include" />
             </e>
             <e p="Main.asmdef" t="Include" />
             <e p="Managers" t="Include">
@@ -502,6 +502,10 @@
             </e>
             <e p="Tests" t="Include">
               <e p="GridTests.cs" t="Include" />
+              <e p="PlayMode" t="Include">
+                <e p="PlayModeTests.asmdef" t="Include" />
+                <e p="ScoreControllerTests.cs" t="Include" />
+              </e>
               <e p="StringExtensionsTests.cs" t="Include" />
               <e p="Tests.asmdef" t="Include" />
             </e>
@@ -526,6 +530,7 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Patterns.csproj" t="IncludeRecursive" />
+      <e p="PlayModeTests.csproj" t="IncludeRecursive" />
       <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="Tests.csproj" t="IncludeRecursive" />
       <e p="Tetris.sln" t="IncludeFlat" />
