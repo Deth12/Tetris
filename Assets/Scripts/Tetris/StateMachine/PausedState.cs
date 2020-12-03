@@ -26,6 +26,12 @@ namespace Tetris.StateMachines
                     return;
                 _stateMachine.ChangeState(_nextState);
             }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (_nextState == null) 
+                    return;
+                _gameController.RestartGame();
+            }
         }
 
         public override void Exit()

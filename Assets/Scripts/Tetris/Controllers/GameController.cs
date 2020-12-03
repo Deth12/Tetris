@@ -2,7 +2,7 @@
 using Tetris.Constants;
 using Tetris.Managers;
 using Tetris.StateMachines;
-
+using UnityEngine;
 namespace Tetris.Controllers
 {
     public class GameController : IGameController
@@ -21,6 +21,7 @@ namespace Tetris.Controllers
         private PrepareState _prepareState;
         private GameplayState _gameplayState;
         private PausedState _pausedState;
+        private EndgameState _endgameState;
     
         // Events
         public event Action OnGameStart;
@@ -53,11 +54,13 @@ namespace Tetris.Controllers
             _prepareState = new PrepareState(_stateMachine, this);
             _pausedState = new PausedState(_stateMachine, this);
             _gameplayState = new GameplayState(_stateMachine, this);
+            _endgameState = new EndgameState(_stateMachine, this);
     
             _prepareState.SetNextState(_gameplayState);
             _gameplayState.SetNextState(_pausedState);
             _pausedState.SetNextState(_gameplayState);
-    
+            _endgameState.SetNextState(_prepareState);
+
             _stateMachine.Initialize(_prepareState);
         }
     
@@ -104,6 +107,7 @@ namespace Tetris.Controllers
             var results = _scoreController.GetResults();
             OnGameEnd?.Invoke();
             OnResultsConcluded?.Invoke(results.level, results.lines, results.score);
+            ChangeState(_endgameState);
         }
 
         public void RestartGame()

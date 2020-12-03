@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Tetris.Patterns;
+using Patterns;
 
 namespace Tetris.Managers
 {
     public class ScenesManager : Singleton<ScenesManager>
     {
-        public Action OnSceneLoad;
-        
         IEnumerator LoadAsynchronously(string levelName, float minWait = 1f) 
         {
-            OnSceneLoad?.Invoke();
-            
             var timer = 0f;
             var minLoadTime = minWait;
      
@@ -34,7 +29,7 @@ namespace Tetris.Managers
 
         public void LoadGameScene()
         {
-            StartCoroutine(LoadAsynchronously("GameScene", 0.5f));
+            StartCoroutine(LoadAsynchronously("GameScene", 0f));
         }
     }
 }

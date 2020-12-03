@@ -16,5 +16,4 @@ MonoBehaviour:
   _moveRightKey: 275
   _rotateKey: 273
   _fallKey: 274
-  _pressTreshold: 0.5
   _inputInterval: 0.1

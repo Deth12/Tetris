@@ -1,7 +1,6 @@
 ﻿using System;
 using Tetris.Configs;
 using Tetris.Controllers;
-using UnityEngine;
 
 namespace Tetris.Managers
 {
@@ -25,6 +24,11 @@ namespace Tetris.Managers
         {
             _playerStats.OnLinesChange += CheckLines;
             _playerStats.ResetProgress();
+        }
+
+        public void AddScore(int value)
+        {
+            _playerStats.Score += value;
         }
 
         public void CollectPlacedBlock()

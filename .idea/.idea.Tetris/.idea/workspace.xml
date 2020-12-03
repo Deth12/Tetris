@@ -20,11 +20,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4aa2255-7c26-4704-926b-5055ddbd472b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Font/Courier Prime Sans Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Font/Courier Prime Sans Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Font/airstrip SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Font/airstrip SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/bg_game_main.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/bg_game_main.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_drop.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_drop.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_move.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_move.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_rotate.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_block_rotate.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_newGame.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_newGame.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_pause.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_pause.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_resume.ogg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Resources/Audio/sfx_game_resume.ogg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Down@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Down@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Left@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Left@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Right@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Right@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Rotate@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Button-Rotate@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Toggle-Off@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Toggle-Off@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Toggle-On@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/Toggle-On@3x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/block.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/block.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AudioLoader.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AudioLoader.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/InputConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/InputConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Extensions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Extensions/GameObjectExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Extensions/GameObjectExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Extensions/StringExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Extensions/StringExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MyMonoInstaller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MyMonoInstaller.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Patterns.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Patterns/Singleton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Patterns/Singleton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Scriptable/AudioLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Scriptable/AudioLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/PausedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/PausedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/TestFade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/TestFade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,34 +86,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/EndgameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/PauseSettingsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/PrepareView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/BaseView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/UI/UI_Panel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/UIController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/BlocksConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/PrepareView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/StringExtensionsTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/BaseView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IBlockController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/UI/UI_Panel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/UI/UI_Screen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Screens/EndgameScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Screens/EndgameView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/IView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScoreManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/IScoreController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/IGameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/IInputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IBlockController.cs" />
@@ -76,7 +121,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/SpawnerPredictor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/PredictionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/BlocksConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/PauseView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/EndgameView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/BaseView.cs" />
@@ -84,28 +128,37 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Utils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/StringExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/ScoreConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" />
         <option value="$PROJECT_DIR$/Assets/InputConfigInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MyMonoInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/AudioController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constants/ConstantPaths.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/MyMonoInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constants/ConstantAudio.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/AudioConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Constants/ConstantPaths.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/GridTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/StringExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/StringExtensionsTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/GameViewTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Scriptable/AudioLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/PausedState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/EndgameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MyMonoInstaller.cs" />
       </list>
     </option>
   </component>
@@ -151,7 +204,8 @@
       <option name="presentableId" value="Default" />
       <updated>1606748665673</updated>
       <workItem from="1606748680616" duration="2102000" />
-      <workItem from="1606752997946" duration="65806000" />
+      <workItem from="1606752997946" duration="73421000" />
+      <workItem from="1607032066598" duration="1091000" />
     </task>
     <servers />
   </component>
@@ -185,9 +239,10 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="120" y="141" width="1200" height="558" key="VCS.FileHistoryDialog/0.23.1440.812@0.23.1440.812" timestamp="1606915243966" />
-    <state x="374" y="175" width="692" height="490" key="find.popup" timestamp="1607013716747">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="374" y="174" width="779" height="490" key="find.popup" timestamp="1607034950532">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
+    <state x="374" y="174" width="779" height="490" key="find.popup/0.23.1440.814@0.23.1440.814" timestamp="1607034950532" />
     <state x="374" y="175" width="692" height="490" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1607013716747" />
   </component>
   <component name="XDebuggerManager">
@@ -195,13 +250,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs</url>
-          <line>38</line>
+          <line>39</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" initialLine="40">
             <startOffsets>
-              <option value="1287" />
+              <option value="1349" />
             </startOffsets>
             <endOffsets>
-              <option value="1288" />
+              <option value="1350" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

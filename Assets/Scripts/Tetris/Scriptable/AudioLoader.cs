@@ -7,7 +7,7 @@ namespace Tetris.Scriptable
     public class AudioLoader: ScriptableObject
     {
         [Tooltip("Path to audio folder in resources")]
-        [SerializeField] private string _audioResourcesPath;
+        [SerializeField] private string _audioResourcesPath = default;
 
         public AudioClip LoadAudioClip(string clipName)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Tetris.Scriptable;
 using Tetris.Constants;
 using UnityEngine;
-using Tetris.Patterns;
+using Patterns;
 using Zenject;
 
 namespace Tetris.Managers

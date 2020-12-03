@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Tetris.UI;
 using Tetris.Controllers;
-using Tetris.Extensions;
+using Extensions;
 using TMPro;
 
 namespace Tetris.Views

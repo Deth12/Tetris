@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Tetris.Controllers
 {
@@ -10,6 +9,11 @@ namespace Tetris.Controllers
         
         private Transform[,] grid = new Transform[WIDTH, HEIGHT];
 
+        public void AddToGrid(Transform transform, int x, int y)
+        {
+            grid[x, y] = transform;
+        }
+        
         public Vector2 RoundVector2(Vector2 v) 
         {
             return new Vector2 (Mathf.Round (v.x), Mathf.Round (v.y));
