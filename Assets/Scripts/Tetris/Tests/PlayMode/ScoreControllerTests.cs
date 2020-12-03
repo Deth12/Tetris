@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Zenject;
@@ -8,7 +6,7 @@ using Tetris.Configs;
 using Tetris.Controllers;
 using Tetris.Managers;
 using Tetris.Constants;
-using TMPro;
+using Tetris.Data;
 using UnityEngine.SceneManagement;
 
 namespace Tests

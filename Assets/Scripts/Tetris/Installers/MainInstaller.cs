@@ -1,9 +1,10 @@
+using UnityEngine;
 using Tetris.Configs;
 using Tetris.Controllers;
 using Tetris.Managers;
-using UnityEngine;
-using Zenject;
 using Tetris.Constants;
+using Tetris.Data;
+using Zenject;
 
 namespace Tetris.Installers
 {

@@ -6,7 +6,7 @@ namespace Tetris.Controllers
     public interface IScoreController : IInitializable, IDisposable
     {
         void CollectPlacedBlock();
-        void CollectClearedLines(int rowsAmount);
+        void CollectClearedLines(int linesAmount);
         (int level, int lines, int score) GetResults();
     }
 }

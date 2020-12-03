@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Tetris.Views;
 using Tetris.Controllers;
+using Tetris.Data;
 using Zenject;
 
 namespace Tetris.Managers

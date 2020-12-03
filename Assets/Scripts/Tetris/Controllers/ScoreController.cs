@@ -1,7 +1,7 @@
 ﻿using System;
 using Tetris.Configs;
 using Tetris.Controllers;
-using UnityEngine;
+using Tetris.Data;
 
 namespace Tetris.Managers
 {

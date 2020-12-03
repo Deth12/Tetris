@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4aa2255-7c26-4704-926b-5055ddbd472b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/ScoreConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/ScoreConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MainInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MainInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/ScoreControllerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/ScoreControllerTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +76,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Utils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InputConfigInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MyMonoInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/AudioController.cs" />
@@ -103,15 +99,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/EndgameState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MyMonoInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MainInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/ScoreConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/BaseView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/ScoreControllerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IScoreController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/ScoreController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MainInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/ScoreControllerTests.cs" />
       </list>
     </option>
   </component>
@@ -159,7 +157,7 @@
       <workItem from="1606748680616" duration="2102000" />
       <workItem from="1606752997946" duration="73421000" />
       <workItem from="1607032066598" duration="1091000" />
-      <workItem from="1607035611353" duration="3377000" />
+      <workItem from="1607035611353" duration="3560000" />
     </task>
     <servers />
   </component>
