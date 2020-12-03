@@ -22,7 +22,7 @@ namespace Tetris.Controllers
         
         public void Tick()
         {
-            if(GetKey(_inputConfig.MoveLeftKey))
+            if (GetKey(_inputConfig.MoveLeftKey))
                 OnMoveLeftPress?.Invoke();
             else if(GetKey(_inputConfig.MoveRightKey))
                 OnMoveRightPress?.Invoke();

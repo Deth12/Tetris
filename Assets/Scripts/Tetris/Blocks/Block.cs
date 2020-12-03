@@ -10,7 +10,7 @@ namespace Tetris.Blocks
 
         private GridController _gridController;
         
-        public event Action<float> OnBlockMove;
+        public event Action<float> OnBlockFall;
         public event Action OnBlockStrafe;
         public event Action OnBlockRotate;
         public event Action OnBlockPlaced;
@@ -46,7 +46,7 @@ namespace Tetris.Blocks
             if (_gridController.IsValidPositionOnGrid(transform))
             {
                 _gridController.UpdateGrid(transform);
-                OnBlockMove?.Invoke(Time.time);
+                OnBlockFall?.Invoke(Time.time);
             } 
             else 
             {
@@ -54,7 +54,7 @@ namespace Tetris.Blocks
                 
                 OnBlockPlaced?.Invoke();
                 
-                OnBlockMove = null;
+                OnBlockFall = null;
                 OnBlockStrafe = null;
                 OnBlockRotate = null;
                 OnBlockPlaced = null;

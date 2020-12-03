@@ -54,7 +54,7 @@ namespace Tetris.Controllers
 
         private void AssignBlockEvents(Block block)
         {
-            block.OnBlockMove += (time) =>
+            block.OnBlockFall += (time) =>
             {
                 _lastFallTime = time;
             };

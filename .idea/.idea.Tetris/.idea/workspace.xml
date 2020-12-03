@@ -20,40 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4aa2255-7c26-4704-926b-5055ddbd472b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Music.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Music/ObservingTheStar.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Music/ObservingTheStar.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Drop.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Drop.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Move.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Move.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/New Game.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/New Game.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Pause.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Pause.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Resume.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Resume.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Rotate.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sound/Rotate.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constants.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constants/ConstantPaths.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Constants/ConstantPaths.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/StringExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/StringExtensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/MyMonoInstaller.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/MyMonoInstaller.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/AudioController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/AudioController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,9 +73,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/MyMonoInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/StateMachine/EmptyState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/PrepareView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/SpawnerPredictor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/PredictionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/BlocksConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" />
@@ -125,9 +94,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Views/GameView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MyMonoInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/AudioController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Constants/ConstantPaths.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/MyMonoInstaller.cs" />
@@ -135,6 +102,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/AudioConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Constants/ConstantPaths.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" />
       </list>
     </option>
   </component>
@@ -180,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606748665673</updated>
       <workItem from="1606748680616" duration="2102000" />
-      <workItem from="1606752997946" duration="65436000" />
+      <workItem from="1606752997946" duration="65806000" />
     </task>
     <servers />
   </component>
