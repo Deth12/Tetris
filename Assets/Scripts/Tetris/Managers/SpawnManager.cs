@@ -52,8 +52,11 @@ namespace Tetris.Managers
 				Destroy(_nextBlock.gameObject);
 			}
 
-			_nextBlock = Instantiate(_blocksConfig.BlockTypes[blockIndex], _nextBlockContainer).gameObject;
+			var position = _nextBlockContainer.position;
+			_nextBlock = Instantiate(_blocksConfig.BlockTypes[blockIndex], position, Quaternion.identity).gameObject;
+			_nextBlock.transform.SetParent(_nextBlockContainer);
 			_nextBlock.AlignCenter();
+			
 			Destroy(_nextBlock.GetComponent<Block>());
 		}
 	}
