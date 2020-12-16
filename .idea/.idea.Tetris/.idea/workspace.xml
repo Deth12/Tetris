@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4aa2255-7c26-4704-926b-5055ddbd472b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tetris/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprite/MainSpriteAtlas.spriteatlas" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprite/MainSpriteAtlas.spriteatlas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Prefab/Blocks/Block.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Prefab/Blocks/Block.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/PauseSettingsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/UIController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Constants/ConstantValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/BlocksConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/PrepareView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GameController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Views/BaseView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/Game/Controllers/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IBlockController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Extensions/SpriteRendererExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../tanks/Assets/Scripts/TB/UI/UI_Panel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/ScenesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/BlockController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,8 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IBlockController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Data/PlayerScore.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IGameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/Interfaces/IInputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Board.cs" />
@@ -83,7 +82,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/AudioConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Constants/ConstantPaths.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Configs/InputConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/GridTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/StringExtensions.cs" />
@@ -108,8 +106,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Installers/MainInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Tests/PlayMode/ScoreControllerTests.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Managers/SpawnManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Blocks/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/GameObjectExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Constants/ConstantValues.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tetris/Controllers/GridController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/SpriteRendererExtensions.cs" />
       </list>
     </option>
   </component>
@@ -158,7 +159,7 @@
       <workItem from="1606752997946" duration="73421000" />
       <workItem from="1607032066598" duration="1091000" />
       <workItem from="1607035611353" duration="4702000" />
-      <workItem from="1607979910690" duration="2057000" />
+      <workItem from="1607979910690" duration="6716000" />
     </task>
     <servers />
   </component>
@@ -197,6 +198,10 @@
     </state>
     <state x="374" y="174" width="779" height="490" key="find.popup/0.23.1440.814@0.23.1440.814" timestamp="1607034950532" />
     <state x="374" y="175" width="692" height="490" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1607013716747" />
+    <state x="383" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608037746965">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="383" y="155" width="672" height="678" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1608037746965" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

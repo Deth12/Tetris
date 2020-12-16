@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using DG.Tweening;
+using Tetris.Extensions;
+using Tetris.Constants;
 
 namespace Tetris.Controllers
 {
@@ -58,9 +61,16 @@ namespace Tetris.Controllers
 
         public void DeleteLine(int y) 
         {
-            for (int x = 0; x < WIDTH; x++) 
+            for (int x = 0; x < WIDTH; x++)
             {
-                GameObject.Destroy(grid[x, y].gameObject);
+                var obj = grid[x, y].gameObject;
+                var spriteRenderer = obj.GetComponent<SpriteRenderer>();
+                
+                if (spriteRenderer != null)
+                    spriteRenderer.FadeDestroy(ConstantValues.BLOCK_FADE_TIME);
+                else
+                    Object.Destroy(obj);
+                
                 grid[x, y] = null;
             }
         }
@@ -72,8 +82,8 @@ namespace Tetris.Controllers
                 if (grid[x, y] != null) 
                 {
                     grid[x, y - 1] = grid[x, y];
-                    grid[x,y] = null;
-                    grid[x, y-1].position += new Vector3(0, -1, 0);
+                    grid[x, y] = null;
+                    grid[x, y - 1].position += new Vector3(0, -1, 0);
                 }
             }
         }
